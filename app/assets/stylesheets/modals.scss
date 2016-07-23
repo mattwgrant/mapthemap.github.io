@@ -1,0 +1,50 @@
+.userform{
+	text-align:center;
+	color:white;
+	z-index:30;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	top: 220px;
+	left: 400px;
+	background-color:rgba(0,0,0, 0.9);
+	padding: 50px 80px 40px 80px;
+	font-family: Helvetica;
+	line-height: 30px;
+	a{
+		text-decoration:none;
+		color:white;
+	}
+	a:hover{
+		color:grey;
+	}
+	#user_email{
+		border-radius:5px;
+		color:grey;
+	}
+	#user_password{
+		border-radius:5px;
+		color:grey;
+	}
+	#user_password_confirmation{
+		border-radius:5px;
+	}
+	#sign_up{
+		background-color: #00ffcc;
+		font-size:0.9em;
+		margin:10px 0 10px 0;
+		border-radius:5px;
+		width:60px;
+		font-family: 'Montserrat', sans-serif;
+	}
+	#log_in{
+		background-color: #00ffcc;
+		font-size:0.9em;
+		margin:10px 0 10px 0;
+		border-radius:5px;
+		width:60px;
+		font-family: 'Montserrat', sans-serif;
+		border-color:#00ffcc;
+	}
+
+}

@@ -1,0 +1,41 @@
+<!-- Display All Trips -->
+<div class="pagewrapper">
+	<!-- <div class="topdiv"> -->
+		<div class="Alltrips">
+			
+			<% @trips.each do |t| %>
+
+				<div id="tripDiv">			
+
+					<%= link_to trip_path(t) do %>
+						<p>
+						<%= t.title %>
+						</p>
+					<% end %>			
+					<%= link_to t , method: :delete, data: {confirm: 'Are you sure?'} do %>
+					<i id="T" class="fa fa-trash-o"></i>
+					<% end %>
+
+				</div>			
+
+			<% end %>
+            
+			 <div id="Left"><i class="fa fa-angle-double-left" id="i"></i></div>
+		</div>
+
+		<div id="trips"><span>T</span><span id="R">r</span><span id="I">i</span><span>p</span><span>s</span></div>
+		<div id="mapwrapper" >
+		  <div id="map" ></div>
+		</div>
+
+	</div>
+</div>
+    <script type="text/javascript">
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers(<%=raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        }); 
+    </script>
+

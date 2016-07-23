@@ -1,0 +1,62 @@
+<div id="pagewrapper">
+  <div id="tripWrapper">
+
+	<div id="leftwrap">
+         <!-- Slider menu for trips and pins -->
+		<h1 id='h1'><%= @trip.title %></h1>
+
+		<div id="linkwrapper">			
+			<%= link_to 'Edit', edit_trip_path(@trip) %>
+			<%= link_to 'Delete', @trip , method: :delete, data: {confirm: 'Are you sure?'} %>
+		</div>
+
+		<ul id="pinwrapper">
+			<% @pins.each do |p|%>
+			<li>
+				<%= image_tag p.image.url(:thumb) %>
+				<%= p.content %>
+				<%= link_to  p , method: :delete, data: {confirm: 'Are you sure?'} do %>
+				<i id="d" class="fa fa-trash-o"></i>
+				<%end%>
+			</li>	
+			<% end %>
+		</ul>
+
+		<div id="AddPin">ADD PIN</div>
+		<div id="left"><i class="fa fa-angle-double-left" id="i"></i></div>
+	</div>
+  </div>
+
+	<div id="trip"><span>Y</span><span>o</span><span>u</span><span id="r">r</span><span>P</span><span id="i">i</span><span>n</span><span>s</span></div>
+		<!-- create pins -->
+	<div id="createpin">
+		<div id="upwrap">
+			<h1>Drop Pins</h1>
+			<ul id="pin">
+				<%= form_for @pin, html: { multipart: true } do |p| %>
+				<li><%= p.label :image %></li>
+				<li><%= p.file_field :image %></li>
+				<li><%= p.label :Address %>
+				<%= p.text_field :address %></li>
+				<li><%= p.label :comment %>
+				<%= p.text_field :content %></li>
+				<%= p.hidden_field :trip_id, value: @trip.id %>
+				<li><%= p.submit :Submit, :id => "create" %></li>
+				<% end %>
+			</ul>
+			<div id="PinClose"><i class="fa fa-angle-double-left" id="Pin"></i></div>
+		</div>
+	</div>
+<!-- mapdiv -->
+		<div id="mapwrapper" >						
+			<div id="map" ></div>
+		</div>
+</div>
+		<script type="text/javascript">
+			handler = Gmaps.build('Google');
+			handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+			  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+			  handler.bounds.extendWith(markers);
+			  handler.fitMapToBounds();
+			}); 
+		</script>

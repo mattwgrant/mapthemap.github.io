@@ -1,0 +1,325 @@
+// Place all the styles related to the trips controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#createtrip{
+	position:absolute;
+	z-index:90;
+	top:76px;
+	margin:auto;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.8);
+	h1{
+		color:white;
+		letter-spacing:20px;
+		margin:100px auto 50px auto;
+		text-align:center;
+		font-size:2.2em;
+		font-family: 'Montserrat', sans-serif;
+	}
+	p{
+		color:white;
+		font-size:0.9em;
+		letter-spacing:5px;
+		text-align:center;
+		font-size: 15px;
+		font-family: 'Montserrat', sans-serif;
+	}
+	ul{
+		position:relative;
+		top:50px;
+	}
+	li{
+		list-style-type:none;
+		margin-bottom:20px;
+		text-align:center;
+		font-family: 'Montserrat', sans-serif;
+	}
+	#Tsubmit{
+		margin-top:40px;
+		border:solid 1px #00ffcc;
+		border-radius:5px;
+		// box-shadow:0px 0px 20px black;
+		color:black;
+		background-color:#00ffcc;
+		padding:12px;
+		font-family: 'Montserrat', sans-serif;
+	}
+	#trip_title{
+		width:300px;
+		font-size:1.7em;
+		border-radius:15px;
+		color:grey;
+	}
+	a{
+		text-decoration:none;
+		color:white;
+	}
+	a:hover{
+		color:grey;
+	}
+}
+.pagewrapper{
+	margin-top:76px;
+	width:100%;
+	height:100%;
+}
+#mapwrapper{
+   position:absolute;
+   z-index:1;
+   background:rgba(255, 255, 255, 0.8);
+   height: 100%;
+   width:100%;
+   opacity:0.8;
+}
+#map{
+   	position:absolute;
+   	width:100%;
+   	height:100%;
+}
+#tripWrapper{
+	position:absolute;
+	z-index:10;
+	color:white;
+	top:76px;
+	left:0px;
+	width:400px;
+	height:625px;
+	background-color:black;
+	overflow:scroll;
+	#left{
+		font-size: 1.9em;
+		color:#00ffcc;
+	}
+	#AddPin:hover{
+		color:grey;
+		cursor:pointer;
+	}
+	#AddPin{
+		position:absolute;
+		bottom:70px;
+		left:130px;
+		font-size:1.2em;
+		color:#00ffcc;
+	}
+	h1{
+		text-align:center;
+		text-transform:uppercase;
+		z-index:3;
+		font-family: 'Montserrat', sans-serif;
+	}
+	#linkwrapper a{
+		float:left;
+	}
+	#linkwrapper a:hover{
+		color:grey;
+	}
+	#linkwrapper a:first-child{	
+		margin-left:120px;
+		border-right:2px solid rgba(250,250,250, 0.6);
+		padding-right:10px;
+	}
+	a{
+		text-decoration:none;
+		color:white;
+		margin-left:10px;
+		z-index:5;
+	}
+	#linkwrapper{
+		position:absolute;
+		bottom:20px;
+		z-index:7;
+		text-align:center;
+	}
+	li:hover{
+		background-color:#00ffcc;
+		cursor:pointer;
+	}
+	li{	
+		position:relative;
+		padding:0;
+		margin:0;	
+		list-style-type:none;
+		border-bottom:solid 1px rgba(250,250,250, 0.6);
+
+	}
+	ul li:first-child{
+		border-top:solid 1px rgba(250,250,250, 0.6);
+
+	}
+	i{
+		position:absolute;
+		font-size:1em;
+		right:20px;
+		bottom:15px;
+	}
+	i:hover{
+		color:grey;
+		cursor:pointer;
+	}
+	
+}
+#trip:hover{
+	cursor:pointer;
+}
+#trip{
+	position:absolute;
+	padding-top:20px;
+	overflow:wrap;
+	z-index:90;	
+	left:0px;
+	font-size:1.5em;
+	bottom:180px;
+	height:300px;
+	width:25px;
+	background-color:black;
+	color:white;
+	span{
+		color:#00ffcc;
+		padding:2px;
+		float:left;
+	}
+	#i{
+		padding-left:6px;
+
+	}
+	#r{
+		margin-bottom:30px;
+		padding-left:4px;
+	}		
+}
+.Alltrips{
+	border-top:solid 1px rgba(250,250,250, 0.6);
+	position:absolute;
+	z-index:10;
+	opacity:0.9;
+	color:white;
+	left:-400px;
+	top:76px;
+	width:400px;
+	height:90%;
+	background-color:black;
+	overflow:scroll;
+
+	#tripDiv{
+		position:relative;
+		text-transform:uppercase;
+		font-size:1.5em;
+		padding:5px;
+		border-bottom:solid 1px rgba(250,250,250, 0.6);
+
+	}
+	#tripDiv:hover{
+		background-color:#00ffcc;
+	}
+	a{
+		text-decoration:none;
+		color:white;
+	}	
+	i{
+		position:absolute;
+		bottom:10px;
+		right:5px;
+		font-size:0.8em;
+		color:white;
+	}
+	#Left{
+		position:absolute;		
+		bottom:12px;
+		right:10px;
+		font-size: 2.5em;
+	}
+	#Left i{
+		color:#00ffcc;
+	}
+	#Left i:hover{
+		color:grey;
+	}
+	i:hover{
+		color:grey;
+		cursor:pointer;
+	}
+}
+#trips:hover{
+	cursor:pointer;
+}
+#trips{
+	position:absolute;
+	padding-top:50px;
+	padding-bottom:20px;
+	overflow:wrap;
+	z-index:90;	
+	left:0px;
+	font-size:1.5em;
+	bottom:230px;
+	height:200px;
+	width:25px;
+	background-color:black;
+	color:white;
+	span{
+		padding:3px;
+		color:#00ffcc;
+		float:left;
+	}
+	#I, #R{
+			padding-left:6px;
+	}
+
+}
+.updatetrip{
+	color:white;
+	position:relative;
+	z-index:0;
+	top:50px;
+	margin:auto;
+	width:100%;
+	height:100%;
+	background:rgba(255, 255, 255, 0.1);
+	
+	ul{
+		position:relative;
+		font-size:1.5em;
+		top:150px;
+		z-index:10;
+	}
+	
+	li{
+		text-transform: uppercase;
+		list-style-type:none;
+		margin-bottom:20px;
+		text-align:center;
+	}
+	
+	#Tsubmit{
+		border-radius:10px;
+		color:white;
+		background:blue;
+		padding:3px;
+	}
+	
+	#trip_title{
+		width:400px;
+		background:grey;
+
+	}
+	a{
+		text-decoration:none;
+		margin-left:450px;
+		color:white;
+	}
+}
+
+// #create {
+// 	background-color: black;
+// 	color: teal;
+// }
+
+
+
+
+
+
+
+
+
+

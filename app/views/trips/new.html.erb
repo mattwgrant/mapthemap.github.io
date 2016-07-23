@@ -1,0 +1,32 @@
+<!-- Create Trip -->
+<% if user_signed_in? %>
+ <div class="pagewrapper">
+	<div class="cover">
+		<div id="createtrip">
+			<h1>Trip Title</h1>
+			<p>Create a trip to get started</p>
+				<ul>
+					<%= form_for @trip do |f| %>
+					<li><%= f.text_field :title %></li>
+					<li><%= f.submit :"Enter", :id => 'Tsubmit' %></li>
+					<% end %>
+				</ul>
+		</div>
+	</div>
+
+		<div id="mapwrapper" >						
+			<div id="map" ></div>
+		</div>
+
+	<!--  <div>
+	</div> -->
+
+	<script type="text/javascript">
+		handler = Gmaps.build('Google');
+		handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+		  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+		  handler.bounds.extendWith(markers);
+		  handler.fitMapToBounds();
+		}); 
+	</script>
+<% end %>

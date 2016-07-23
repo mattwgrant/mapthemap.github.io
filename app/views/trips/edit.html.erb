@@ -1,0 +1,34 @@
+<!-- Update Trip -->
+<% if user_signed_in? %>
+	 <div class="pagewrapper">
+			<div class="cover">
+				<div id="createtrip">
+					<h1>TITLE</h1>
+					<p>Update Trip Title</p>
+						<ul>
+							<%= form_for @trip do |f| %>
+								<li><%= f.text_field :title %></li>
+								<li><%= f.submit :"Update", :id => 'Tsubmit' %></li>
+								<li><%= link_to "Cancel", trip_path(@trip) %>
+							<% end %>
+						</ul>
+				</div>
+			</div>
+
+				<div id="mapwrapper" >						
+					<div id="map" ></div>
+				</div>
+	 </div>
+	<!-- </div> -->
+			<script type="text/javascript">
+				handler = Gmaps.build('Google');
+				handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+				  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+				  handler.bounds.extendWith(markers);
+				  handler.fitMapToBounds();
+				}); 
+			</script>
+<% end %>
+
+
+
